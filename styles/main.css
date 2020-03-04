@@ -19,10 +19,15 @@ body {
     height: 100px;
     border: 1px solid black;
     display: none;
-    text-align: center; }
+    text-align: center;
+    -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+    transition: background-color 0.5s, -webkit-transform 0.5s;
+    transition: background-color 0.5s, transform 0.5s;
+    transition: background-color 0.5s, transform 0.5s, -webkit-transform 0.5s; }
   .calendar div:hover {
-    -webkit-animation: pink-up 0.5s;
-            animation: pink-up 0.5s; }
+    background-color: pink;
+    -webkit-transform: translate(0, -20px);
+            transform: translate(0, -20px); }
 
 .calendar-28 div:nth-child(1) {
   display: block; }
@@ -870,17 +875,5 @@ body {
 
 .calendar-sun :first-child {
   margin-left: 606px; }
-
-@-webkit-keyframes pink-up {
-  to {
-    background-color: pink;
-    -webkit-transform: translate(0, -20px);
-            transform: translate(0, -20px); } }
-
-@keyframes pink-up {
-  to {
-    background-color: pink;
-    -webkit-transform: translate(0, -20px);
-            transform: translate(0, -20px); } }
 
 /*# sourceMappingURL=main.css.map */
