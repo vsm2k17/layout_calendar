@@ -1,5 +1,4 @@
 $cell-width: 100px;
-$cell-height: 100px;
 $days: 28, 29, 30, 31;
 $week: ("mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6);
 
@@ -13,14 +12,14 @@ body {
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
-  width: 707px;
+  width: $cell-width * 7 + 7;
 }
 
 .calendar div {
   margin: 1px 1px 0 0;
   box-sizing: border-box;
   width: $cell-width;
-  height: $cell-height;
+  height: $cell-width;
   border: 1px solid black;
   display: none;
   text-align: center;
@@ -36,7 +35,7 @@ body {
 
     .calendar-#{$day} div:nth-child(#{$i})::after {
       content: "#{$i}";
-      line-height: $cell-height;
+      line-height: $cell-width;
     }
 
   }
@@ -53,7 +52,6 @@ body {
 }
 
 @keyframes pink-up {
-
   to {
     background-color: pink;
     transform: translate(0, -20px);
