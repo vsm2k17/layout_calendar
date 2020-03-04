@@ -13,17 +13,20 @@ body {
   margin: 0 auto;
   flex-wrap: wrap;
   width: $cell-width * 7 + 7;
-}
 
-.calendar div {
-  margin: 1px 1px 0 0;
-  box-sizing: border-box;
-  width: $cell-width;
-  height: $cell-width;
-  border: 1px solid black;
-  display: none;
-  text-align: center;
+  div {
+    margin: 1px 1px 0 0;
+    box-sizing: border-box;
+    width: $cell-width;
+    height: $cell-width;
+    border: 1px solid black;
+    display: none;
+    text-align: center;
+  }
 
+  div:hover {
+    animation: pink-up 0.5s;
+  }
 }
 
 @each $day in $days {
@@ -45,10 +48,6 @@ body {
   .calendar-#{$x} :first-child {
     margin-left: $cell-width * $a + $a;
   }
-}
-
-.calendar div:hover {
-  animation: pink-up 0.5s;
 }
 
 @keyframes pink-up {
