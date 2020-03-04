@@ -22,10 +22,12 @@ body {
     border: 1px solid black;
     display: none;
     text-align: center;
+    transition: background-color 0.5s, transform 0.5s;
   }
 
   div:hover {
-    animation: pink-up 0.5s;
+    background-color: pink;
+    transform: translate(0, -20px);
   }
 }
 
@@ -47,12 +49,5 @@ body {
 @each $x, $a in $week {
   .calendar-#{$x} :first-child {
     margin-left: $cell-width * $a + $a;
-  }
-}
-
-@keyframes pink-up {
-  to {
-    background-color: pink;
-    transform: translate(0, -20px);
   }
 }
